@@ -324,15 +324,15 @@ class vm_translator:
 class cmd_translator:
 	def arithmetic_cmds(cmd):
 		assembly_code = ''
-		if cmd in ['add', 'sub']:			assembly_code = cmd_translator.add_sub(cmd)
-		elif cmd in ['not', 'neg']:			assembly_code = cmd_translator.not_neg(cmd)
-		elif cmd in ['and', 'or']:			assembly_code = cmd_translator.and_or(cmd)
+		if cmd in ['add', 'sub']:		assembly_code = cmd_translator.add_sub(cmd)
+		elif cmd in ['not', 'neg']:		assembly_code = cmd_translator.not_neg(cmd)
+		elif cmd in ['and', 'or']:		assembly_code = cmd_translator.and_or(cmd)
 		elif cmd in ['eq', 'gt', 'lt']: 	assembly_code = cmd_translator.eq_gt_lt(cmd)
 		return assembly_code
 
 	def branching_cmds(cmd, arg1):
 		assembly_code = ''
-		if(cmd == 'label'):			assembly_code = cmd_translator.label(arg1)
+		if(cmd == 'label'):		assembly_code = cmd_translator.label(arg1)
 		elif(cmd == 'goto'):		assembly_code = cmd_translator.goto(arg1)
 		elif(cmd == 'if-goto'):		assembly_code = cmd_translator.if_goto(arg1)
 		return assembly_code
@@ -762,9 +762,9 @@ class cmd_translator:
 			return'error'
 
 		if arg1 in ['local', 'argument', 'temp']:
-			if(arg1 == 'local'):				comp_opt.access_memSegment(code,RAM.LCL,arg2,'D')
-			elif(arg1 == 'argument'):			comp_opt.access_memSegment(code,RAM.ARG,arg2,'D')
-			elif(arg1 == 'temp'):				comp_opt.access_tempSegment(code,RAM.TEMP,arg2,'D')
+			if(arg1 == 'local'):			comp_opt.access_memSegment(code,RAM.LCL,arg2,'D')
+			elif(arg1 == 'argument'):		comp_opt.access_memSegment(code,RAM.ARG,arg2,'D')
+			elif(arg1 == 'temp'):			comp_opt.access_tempSegment(code,RAM.TEMP,arg2,'D')
 
 			comp_opt.store_GPR(code,1)
 			comp_opt.access_GPR(code,0,'D')
