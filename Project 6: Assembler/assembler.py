@@ -222,7 +222,7 @@ class c_instruction:
 
 		elif(comp_eqn == 'D'):	comp_code='0001100'
 
-		elif(comp_eqn == 'A'):	comp_code = '0110000' 	
+		elif(comp_eqn == 'A'):	comp_code='0110000' 	
 		elif(comp_eqn == 'M'):	comp_code='1110000'
 
 		elif(comp_eqn == '!D'):	comp_code='0001101'
